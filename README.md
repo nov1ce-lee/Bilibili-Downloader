@@ -2,7 +2,7 @@
 
 一个简约、优雅的 B 站视频解析与下载工具只需粘贴视频链接，即可一键解析并下载不同清晰度的视频或音频
 
-![Bilibili Downloader](./public/favicon.svg)
+<img src="./public/favicon.svg" width="128" alt="Bilibili Downloader" />
 
 ## ✨ 功能特点
 
