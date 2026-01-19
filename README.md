@@ -1,57 +1,71 @@
-# React + TypeScript + Vite
+# 📺 Bilibili Downloader B站视频下载器
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个简约、优雅的 B 站视频解析与下载工具只需粘贴视频链接，即可一键解析并下载不同清晰度的视频或音频
 
-Currently, two official plugins are available:
+![Bilibili Downloader](./public/favicon.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 功能特点
 
-## Expanding the ESLint configuration
+- **一键解析**：支持输入 B 站视频链接（BV号或完整URL）快速获取视频信息
+- **多分辨率支持**：提供 1080P、720P、480P 等多种清晰度下载选项
+- **音频独立下载**：支持单独提取并下载 M4A 格式的高品质音频
+- **高级画质解锁**：支持配置 SESSDATA (Cookie) 以获取 1080P+、4K 等会员专享画质
+- **优雅界面**：基于 React + Tailwind CSS 打造的现代化、响应式 UI 设计
+- **流式传输**：后端采用流式代理，不占用服务器内存，支持大文件稳定下载
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ 技术栈
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **前端**：React 18, TypeScript, Tailwind CSS, Vite
+- **后端**：Node.js, Express
+- **工具**：Axios (网络请求), Lucide React (图标库)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 快速开始
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 环境要求
 
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Node.js >= 16
+
+### 安装与运行
+
+1. **克隆项目或下载源码**
+
+2. **安装依赖**
+
+   在项目根目录下运行：
+
+   ```bash
+   npm install
+   ```
+
+3. **启动开发服务器**
+
+   只需一个命令即可同时启动前端和后端服务：
+
+   ```bash
+   npm run dev
+   ```
+
+   - 前端地址：http://localhost:5173
+   - 后端地址：http://localhost:3001
+
+## 📖 使用指南
+
+### 基础用法
+1. 复制 B 站视频链接（例如 `https://www.bilibili.com/video/BV...`）
+2. 在输入框中粘贴链接，点击“解析视频”或按回车键
+3. 解析成功后，点击对应的分辨率按钮下载视频，或点击“下载音频”按钮
+
+### 进阶用法 (获取更高画质)
+如果你想下载 1080P 高码率或 4K 画质：
+1. 在浏览器中登录 B 站
+2. 按 `F12` 打开开发者工具，切换到 **Application** (应用程序) -> **Cookies** -> bilibili.com
+3. 找到 `SESSDATA` 字段并复制其值
+4. 在下载器界面点击“显示高级设置”，粘贴 SESSDATA
+5. 再次点击解析，即可看到更多高清选项
+
+## ⚠️ 免责声明
+
+本项目仅供学习和研究使用
+- 请勿用于下载版权受保护的视频进行非法传播
+- 所有的视频文件均直接来源于 B 站服务器，本项目不存储任何视频文件
+- 使用本工具产生的任何法律纠纷由使用者自行承担
